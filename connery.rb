@@ -74,6 +74,11 @@ if implicit_output
   co2e = eval(#{schema['algorithm'].to_json})
 EOF
 end
+if schema['algorithm'].include?('dataFinder') || schema['algorithm'].include?('profileFinder')
+  puts 'WARNING: algorithm uses dataFinder or profileFinder, which are not'
+  puts '  supported by this tool. You will need to manually edit the algorithm'
+  puts '  to make it work.'
+end
 
 File.open(output_name+'.json', "wb") do |file|
   file << JSON.pretty_generate(schema)
