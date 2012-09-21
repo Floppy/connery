@@ -1,6 +1,10 @@
 require 'csv'
 require 'json'
 
+# TODO drop v1-only itemdefs
+# TODO make separate files an option
+# TODO convert metadata, docs, etc
+
 input_path = ARGV[0]
 output_name = ARGV[1]
 
