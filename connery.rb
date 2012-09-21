@@ -47,14 +47,18 @@ def role(itemdef)
 end
 
 schema['definitions'] = itemdefs.map do |itemdef|
-  {
+  definition = {
     'label' => itemdef['path'],
     'name' => itemdef['name'],
     'type' => itemdef['type'].downcase,
     'role' => role(itemdef),
     'default' => itemdef['default'],
-    'unit' => itemdef['unit'], # needs perUnit integration
+    'unit' => itemdef['unit'],
   }
+  if itemdef['perUnit']
+    definition['unit'] += '/' + itemdef['perUnit']
+  end
+  definition
 end
 
 # Add outputs
