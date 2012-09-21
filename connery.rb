@@ -6,6 +6,9 @@ require 'json'
 # TODO convert metadata, docs, etc
 # TODO handle metadata on individual data items
 # TODO handle per-item algorithms (or decide to discard)
+# TODO add MARV outputs
+# TODO modify algorithms for MARV outputs
+# TODO add required/optional information for inputs
 
 input_path = ARGV[0]
 output_name = ARGV[1]
